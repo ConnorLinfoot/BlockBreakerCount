@@ -18,12 +18,15 @@ public class BlockBreak implements Listener {
         ItemStack itemInHand = player.getItemInHand();
         if (itemInHand == null || itemInHand.getType() == null) return;
         if (itemInHand.getItemMeta().getDisplayName() == null) return;
+        player.sendMessage("1");
         if (itemInHand.getType().toString().toLowerCase().contains("pickaxe") ||
                 itemInHand.getType().toString().toLowerCase().contains("axe") ||
                 itemInHand.getType().toString().toLowerCase().contains("spade")) {
+            player.sendMessage("2");
             ItemMeta itemMeta = itemInHand.getItemMeta();
             String displayName = itemMeta.getDisplayName();
             if (displayName.contains(ChatColor.AQUA + "[") && displayName.contains("]" + ChatColor.BLACK)) {
+                player.sendMessage("3");
                 player.sendMessage(displayName);
                 player.sendMessage(String.valueOf(displayName.indexOf("[") + 1));
                 int first = displayName.indexOf("[") + 1;
