@@ -1,5 +1,6 @@
 package com.connorlinfoot.blockbreakercount;
 
+import com.connorlinfoot.blockbreakercount.Commands.BBCCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.command.ConsoleCommandSender;
@@ -11,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BlockBreakerCount extends JavaPlugin implements Listener {
     private static Plugin instance;
     public static boolean SNAPSHOT = false;
+    public static String Prefix = "[BlockBreakerCount] ";
 
     public void onEnable() {
         instance = this;
@@ -32,6 +34,8 @@ public class BlockBreakerCount extends JavaPlugin implements Listener {
         console.sendMessage("");
         console.sendMessage(ChatColor.BLUE + "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         console.sendMessage("");
+
+        registerCommands(console);
     }
 
     public void onDisable() {
@@ -40,5 +44,10 @@ public class BlockBreakerCount extends JavaPlugin implements Listener {
 
     public static Plugin getInstance() {
         return instance;
+    }
+
+    private void registerCommands(ConsoleCommandSender console){
+        getCommand("bbc").setExecutor(new BBCCommand());
+        console.sendMessage(Prefix + "Commands have been registered");
     }
 }
