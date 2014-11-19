@@ -25,8 +25,8 @@ public class BlockBreak implements Listener {
             String displayName = itemMeta.getDisplayName();
             if (displayName.contains(ChatColor.AQUA + "[") && displayName.contains("]" + ChatColor.BLACK)) {
                 player.sendMessage(displayName);
-                player.sendMessage(String.valueOf(displayName.indexOf("[") + 2));
-                int first = displayName.indexOf("[") + 2;
+                player.sendMessage(String.valueOf(displayName.indexOf("[") + 1));
+                int first = displayName.indexOf("[") + 1;
                 player.sendMessage(String.valueOf(displayName.indexOf("]") + 1));
                 int last = displayName.indexOf("]") + 1;
                 player.sendMessage(displayName.substring(first).replaceAll("]" + ChatColor.BLACK, ""));
