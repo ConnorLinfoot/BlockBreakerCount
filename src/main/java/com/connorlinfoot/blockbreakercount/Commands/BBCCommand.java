@@ -18,7 +18,7 @@ public class BBCCommand implements CommandExecutor {
             Player player = (Player) sender;
             ItemStack itemStack = new ItemStack(Material.DIAMOND_PICKAXE);
             ItemMeta itemMeta = itemStack.getItemMeta();
-            itemMeta.setDisplayName(ChatColor.WHITE + "Diamond Pickaxe " + ChatColor.AQUA + "[" + 0 + "]" + ChatColor.BLACK);
+            itemMeta.setDisplayName(ChatColor.WHITE + "Diamond Pickaxe " + ChatColor.AQUA + "[" + 0 + "]");
             itemStack.setItemMeta(itemMeta);
 
             player.getInventory().addItem(itemStack);
