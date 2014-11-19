@@ -27,6 +27,7 @@ public class BlockBreak implements Listener {
                 int first = displayName.indexOf("[") + 2;
                 int last = displayName.indexOf("]");
                 int count = Integer.parseInt(displayName.substring(first, displayName.length() - last));
+                player.sendMessage(displayName.substring(first, displayName.length() - last));
                 int newCount = count + 1;
                 displayName = displayName.replaceAll(String.valueOf(count), String.valueOf(newCount));
                 itemMeta.setDisplayName(displayName);
