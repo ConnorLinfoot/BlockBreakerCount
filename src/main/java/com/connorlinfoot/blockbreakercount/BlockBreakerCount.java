@@ -10,12 +10,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class BlockBreakerCount extends JavaPlugin implements Listener {
-    private static Plugin instance;
+    private static Plugin plugin;
     public static boolean SNAPSHOT = false;
     public static String Prefix = "[BlockBreakerCount] ";
 
     public void onEnable() {
-        instance = this;
+        plugin = this;
         getConfig().options().copyDefaults(true);
         saveConfig();
         Server server = getServer();
@@ -42,8 +42,8 @@ public class BlockBreakerCount extends JavaPlugin implements Listener {
         getLogger().info(getDescription().getName() + " has been disabled!");
     }
 
-    public static Plugin getInstance() {
-        return instance;
+    public static Plugin getPlugin() {
+        return plugin;
     }
 
     private void registerCommands(ConsoleCommandSender console){
