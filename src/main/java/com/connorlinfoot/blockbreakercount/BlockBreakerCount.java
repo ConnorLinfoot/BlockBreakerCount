@@ -46,7 +46,7 @@ public class BlockBreakerCount extends JavaPlugin implements Listener {
         return plugin;
     }
 
-    private void registerCommands(ConsoleCommandSender console){
+    private void registerCommands(ConsoleCommandSender console) {
         getCommand("bbc").setExecutor(new BBCCommand());
         console.sendMessage(Prefix + "Commands have been registered");
     }
