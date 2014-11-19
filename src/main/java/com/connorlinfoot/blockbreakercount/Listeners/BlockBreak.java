@@ -25,13 +25,13 @@ public class BlockBreak implements Listener {
             player.sendMessage("2");
             ItemMeta itemMeta = itemInHand.getItemMeta();
             String displayName = itemMeta.getDisplayName();
-            if (displayName.contains(ChatColor.AQUA + "[") && displayName.contains("]" + ChatColor.BLACK)) {
+            if (displayName.contains(ChatColor.AQUA + "[")) {
                 player.sendMessage("3");
                 player.sendMessage(displayName);
                 player.sendMessage(String.valueOf(displayName.indexOf("[") + 1));
                 int first = displayName.indexOf("[") + 1;
-                player.sendMessage(String.valueOf(displayName.indexOf("]") + 1));
-                int last = displayName.indexOf("]") + 1;
+                //player.sendMessage(String.valueOf(displayName.indexOf("]") + 1));
+                //int last = displayName.indexOf("]") + 1;
                 player.sendMessage(displayName.substring(first).replaceAll("]" + ChatColor.BLACK, ""));
                 int count = Integer.parseInt(displayName.substring(first).replaceAll("]" + ChatColor.BLACK, ""));
 
