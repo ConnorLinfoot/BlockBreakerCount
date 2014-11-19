@@ -2,6 +2,7 @@ name: BlockBreakerCount
 description: BlockBreakerCount
 main: com.connorlinfoot.blockbreakercount.BlockBreakerCount
 version: 1.0-SNAPSHOT
+authors: [Connor Linfoot]
 commands:
   bbc:
     description: BlockBreakerCount command
